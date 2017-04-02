@@ -4,7 +4,7 @@ use DBI;
 sub connect{
 	my $driver   ="Pg";
 	my $database ="app";
-	my $dsn ="DBI:$driver:dbname=$database;host=pg.createclouds.cn;port=5432";
+	my $dsn ="DBI:$driver:dbname=$database;host=localhost;port=5432";
 	my $userid = "app";
 	my $password = "app";
 	my $dbh = DBI->connect($dsn, $userid, $password,{RaiseError=>1}) or die $DBI::errstr;
