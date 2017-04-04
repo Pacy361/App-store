@@ -1,6 +1,26 @@
 #!/usr/bin/env perl
 package public;
+use strict;
 use DBI;
+use CGI;
+sub cookie{
+my $q = CGI->new;
+my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
+my @cookies = split /;/, $rcvd_cookies;
+my $user_id = "";
+foreach my $cookie ( @cookies ){
+   my ($key, $val) = split(/=/, $cookie);
+   $key =~ s/^\s+//;
+   $val =~ s/^\s+//;
+   $key =~ s/\s+$//;
+   $val =~ s/\s+$//;
+   if( $key eq "UserId" ){
+      $user_id = $val;
+      return "Content-type:text/html\n\n"."<br>".$user_id;
+   }
+}
+return $q->redirect("/cgi/turn.pl?warn=nologin");
+}
 sub connect{
 	my $driver   ="Pg";
 	my $database ="app";
@@ -27,7 +47,7 @@ sub sel_sql{
 	if($rv<0){
         	print $DBI::errstr;
 	}
-	my @row,@ret;
+	my (@row,@ret);
 	while(@row=$sth->fetchrow_array()){
 		push @ret,@row;
 	}

@@ -9,10 +9,9 @@ use strict;
 require public;
 print <<END;
 <div align="center">
-<form action="sign_up_mid.pl" method="POST">
+<form action="sign_in_mid.pl" method="POST">
 êÇ³Æ:<input name="name"><br>
 ÃÜÂë:<input name="password"><br>
-ÓÊÏä:<input name="mail"><br>
 <input type="submit" value="Ìá½»">
 </form>
 </div>
