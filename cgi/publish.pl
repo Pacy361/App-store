@@ -1,11 +1,13 @@
 #!/usr/bin/env perl
+require public;
+print public->cookie();
 print "Content-type:text/html\n\n";
 print <<END;
 <html>
 	<head><title></title></head>
 	<body>
 <div align="center">
-	<form action="publish_after.pl" method="POST" ENCTYPE="multipart/form-data">
+	<form action="publish_mid.pl" method="POST" ENCTYPE="multipart/form-data">
 	名称:<input name="filename"><br>
         一级分类:
 	<select onChange="change()" id="first" name="first">  

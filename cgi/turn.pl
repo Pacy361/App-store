@@ -22,14 +22,22 @@ foreach $pair (@pairs){
 		$msg="邮箱已经存在";
 	}elsif($value =~ "nologin"){
 		$msg="请先登录,将在<span id=mes>5</span>秒钟后返回首页!";
+		$url="http://app.createclouds.cn";
 	}elsif($value =~ "user_not_exist"){
 		$msg="用户不存在";
 	}elsif($value =~ "user_not_alive"){
 		$msg="用户未激活，请登录注册时邮箱激活";
 	}elsif($value =~ "password_wrong"){
 		$msg="密码不正确";
+	}elsif($value =~ "upload_success"){
+		$msg='上传成功,审核通过后会邮件通知，请注意查收，同时，您的应用会出现在首页<br><div align=center>将在 <span id=mes>5</span> 秒钟后跳转至管理界面！</div>';
+		$url="http://app.createclouds.cn/cgi/manage.pl";
+	}elsif($value =~ "error"){
+		$msg='貌似有点问题，请告诉我们<br>将在 <span id=mes>5</span> 秒钟后跳转至反馈界面!</div>';
+		$url="http://app.createclouds.cn/cgi/feedback.pl";
 	}else{
 		$msg='系统给您的邮箱发送了一封激活邮件，请点击链接进行激活<br><div align=center>将在 <span id=mes>5</span> 秒钟后返回首页！</div>';
+		$url="http://app.createclouds.cn";
 	}
 }
 print <<END;
@@ -41,7 +49,7 @@ var intervalid;
 intervalid = setInterval("fun()", 1000); 
 function fun() { 
 if (i == 0) { 
-window.location.href = "http://app.createclouds.cn/"; 
+window.location.href = "$url"; 
 clearInterval(intervalid); 
 } 
 document.getElementById("mes").innerHTML = i; 

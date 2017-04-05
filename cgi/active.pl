@@ -30,11 +30,11 @@ i--;
 } 
 </script>
 <head>
-<title>error</title>
+<title>激活页</title>
 </head>
 <body>
 <div align="center">
-<h2>激活成功，正在登录... <span id=mes>5</span></2>
+<h2>激活成功，正在返回首页... <span id=mes>5</span></2>
 </div>
 </body>
 </html>

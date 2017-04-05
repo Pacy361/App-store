@@ -16,7 +16,8 @@ foreach my $cookie ( @cookies ){
    $val =~ s/\s+$//;
    if( $key eq "UserId" ){
       $user_id = $val;
-      return "Content-type:text/html\n\n"."<br>".$user_id;
+      #return "Content-type:text/html\n\n"."<br>".$user_id;
+      return "";
    }
 }
 return $q->redirect("/cgi/turn.pl?warn=nologin");
