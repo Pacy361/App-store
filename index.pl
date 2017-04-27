@@ -3,7 +3,7 @@ print "Content-type:text/html\n\n";
 print <<EndOfHTML;
 <html>
 	<head>
-		<title>安卓市场</title>
+		<title>安卓应用市场</title>
 	<script type="text/javascript" src="script/ajax.js" >
 	</script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
