@@ -6,4 +6,4 @@ use CGI;
 use MIME::Lite;
 my $q = CGI->new;
 my %data;
-print "<a href=http://app.createclouds.cn/index.pl>homepage</a>";
+print "<a href=http://app.createclouds.cn>homepage</a>";

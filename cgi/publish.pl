@@ -8,7 +8,7 @@ print <<END;
 	<body>
 <div align="center">
 	<div align="left">
-                        <a href=http://app.createclouds.cn/index.pl>Ê×Ò³</a>
+                        <a href=http://app.createclouds.cn>Ê×Ò³</a>
         </div>
 	<form action="publish_mid.pl" method="POST" ENCTYPE="multipart/form-data">
 	Ãû³Æ:<input name="filename"><br>

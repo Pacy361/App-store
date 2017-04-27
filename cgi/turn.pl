@@ -22,7 +22,7 @@ foreach $pair (@pairs){
 		$msg="邮箱已经存在";
 	}elsif($value =~ "nologin"){
 		$msg="请先登录,将在<span id=mes>5</span>秒钟后返回首页!";
-		$url="http://app.createclouds.cn/index.pl";
+		$url="http://app.createclouds.cn";
 	}elsif($value =~ "user_not_exist"){
 		$msg="用户不存在";
 	}elsif($value =~ "user_not_alive"){
@@ -44,7 +44,7 @@ foreach $pair (@pairs){
 		$url="http://app.createclouds.cn/cgi/manage.pl";
 	}elsif($value =~ "modify_success"){
 		$msg='密码修改成功,<br><div align=center>将在<span id=mes>5</span>秒后跳转至首页!</div>';
-		$url="http://app.createclouds.cn/index.pl";
+		$url="http://app.createclouds.cn";
 	}elsif($value =~ "modify_wrong"){
 		$msg='貌似有点问题，请告诉我们<br>将在 <span id=mes>5</span> 秒钟后跳转至反馈界面!</div>';
 		$url="http://app.createclouds.cn/cgi/feedback.pl";
@@ -52,7 +52,7 @@ foreach $pair (@pairs){
 		print "验证码错误";
 	}else{
 		$msg='系统给您的邮箱发送了一封激活邮件，请点击链接进行激活<br><div align=center>将在 <span id=mes>5</span> 秒钟后返回首页！</div>';
-		$url="http://app.createclouds.cn/index.pl";
+		$url="http://app.createclouds.cn";
 	}
 }
 print <<END;

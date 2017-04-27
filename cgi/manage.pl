@@ -13,7 +13,7 @@ print <<END;
 	</head>
 	<body>
 		<div align="left">
-			<a href=http://app.createclouds.cn/index.pl>Ê×Ò³</a>
+			<a href=http://app.createclouds.cn>Ê×Ò³</a>
 		</div>
 		<div align="center">
 			<h1 id=app_h1>
