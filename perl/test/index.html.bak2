@@ -1,0 +1,66 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html" >
+<title>Insert title here</title>
+<script type="text/javascript">
+	function getRequest() {
+	    var xmlHttp = null;
+	    try {// Chrome, Firefox, Opera, Safari
+	        xmlHttp = new XMLHttpRequest();
+	    } catch (e) {
+	        try {// Internet Explorer
+	            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	        } catch (e) {
+	            try {// Internet Explorer
+	                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	            } catch (e) {
+	                alert("your browser not support ajax!");
+	            }
+	        }
+	    }
+	    return xmlHttp;
+	}
+	var request = getRequest();	
+	window.onload = function(){
+                var btn02Ele = document.getElementById("btn02");
+                btn02Ele.onclick = function(){
+                        //发送GET请求
+                        //1.调用request对象的open()方法建立一个连接
+                        //①method参数：请求方式
+                        //②url参数：请求的目标地址
+                        //发送请求参数：附着在URL地址后面
+			request.onreadystatechange=state_Change;
+                        request.open("GET","http://app.createclouds.cn/cgi/get.pl?name=Alice");
+                        //2.调用request对象的send()方法发送请求数据
+                        request.send();
+        	};
+}	
+function state_Change()
+{
+if (request.readyState==4)
+  {// 4 = "loaded"
+  if (request.status==200)
+    {// 200 = "OK"
+    document.getElementById('ret').innerHTML=request.responseText;
+    }
+  else
+    {
+    alert("Problem retrieving XML data:" + request.statusText);
+    }
+  }
+}
+</script>
+<script type="text/javascript" src="scrip/ajax.js">
+</head>
+<body>
+
+	<center>
+		<button id="btn02">发送GET请求</button><br />
+		<button id="btn06">接收【JSON】格式的响应数据</button><br />
+		<br /><br />
+		<span id="ret" ></span>
+	</center>
+	
+
+</body>
+</html>

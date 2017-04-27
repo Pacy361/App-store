@@ -1,0 +1,14 @@
+<script language="javascript" type="text/javascript"> 
+var i = 5; 
+var intervalid; 
+intervalid = setInterval("fun()", 1000); 
+function fun() { 
+if (i == 0) { 
+window.location.href = "../index.html"; 
+clearInterval(intervalid); 
+} 
+document.getElementById("mes").innerHTML = i; 
+i--; 
+} 
+</script> 
+<p>将在 <span id="mes">3</span> 秒钟后返回首页！</p> 

@@ -1,0 +1,49 @@
+	function getRequest() {
+	    var xmlHttp = null;
+	    try {// Chrome, Firefox, Opera, Safari
+	        xmlHttp = new XMLHttpRequest();
+	    } catch (e) {
+	        try {// Internet Explorer
+	            xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	        } catch (e) {
+	            try {// Internet Explorer
+	                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+	            } catch (e) {
+	                alert("your browser not support ajax!"); }
+	        }
+	    }
+	    return xmlHttp;
+	}
+	var request = getRequest();	
+	window.onload = function(){
+		//发送验证码
+                var code= document.getElementById("code");
+                code.onclick = function(){
+			var name = document.getElementById("name").value;
+			var mail = document.getElementById("mail").value;
+			if(mail == ""){
+				alert("请输入邮箱地址");
+				return;
+			}
+			var url = "http://app.createclouds.cn/cgi/mail.pl?user=" + name + "&address=" + mail;
+			document.getElementById("code").innerHTML="再发送邮件";
+			request.onreadystatechange=state_Change;
+                        request.open("GET",url);
+                        request.send();
+        	};
+}	
+function state_Change()
+{
+if (request.readyState==4)
+  {// 4 = "loaded"
+  if (request.status==200)
+    {// 200 = "OK"
+	str=request.responseText; 
+	alert(str);
+    }
+  else
+    {
+    alert("Problem retrieving XML data:" + request.statusText);
+    }
+  }
+}
