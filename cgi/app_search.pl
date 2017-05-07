@@ -73,13 +73,15 @@ End
 #查找应用
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @account=split(/=/,$rcvd_cookies);
+my $session1 = CGI::Session->new($account[1]);
+my $user1 = $session1->param('name');
 my $sql=<<END;
 select name,size,download,url from apps where enable='T' and class1='$name';
 END
 if($name eq "个人"){
-	$sql="select name,size,download,url,enable from apps where account='$account[1]';";
+	$sql="select name,size,download,url,enable from apps where account='$user1' and enable='T';";
 }
-if($name eq "个人" && $account[1] eq "Admin"){
+if($name eq "个人" && $user1 eq "Admin"){
 	$sql="select name,size,download,url,enable from apps;";
 }
 my @row=public->sel_sql($sql);
@@ -127,7 +129,9 @@ while(@app_row){
 my $str;
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @name=split(/=/,$rcvd_cookies);
-if($name[1] eq 'Admin'){
+my $session = CGI::Session->new($name[1]);
+my $user = $session->param('name');
+if($user eq 'Admin'){
 	print <<End;
 		应用管理,$ret,$ret_list,<hr>用户管理,$ret1,$user_list,$user_modify
 End

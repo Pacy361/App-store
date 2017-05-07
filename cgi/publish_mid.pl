@@ -22,8 +22,10 @@ my $size=$size[7]."Byte";
 my $url="$fullname";
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @account=split(/=/,$rcvd_cookies);
+my $session = CGI::Session->new($account[1]);
+my $name = $session->param('name');
 my $sql=<<END;
-insert into apps(name,class1,class2,size,url,account) values('$data{name}','$data{first}','$data{second}','$size','$url','$account[1]');
+insert into apps(name,class1,class2,size,url,account) values('$data{name}','$data{first}','$data{second}','$size','$url','$name');
 END
 my $res=public->exec_sql($sql);
 if($res){
