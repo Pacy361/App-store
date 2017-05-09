@@ -9,7 +9,7 @@ $data{name} = $q->param('filename');
 if($data{name} eq ""){
 	print $q->redirect("/cgi/turn.pl?warn=appname_none");
 }
-my $fullname=time();
+my $fullname="http://app.createclouds.cn/cgi/down_mid.pl?name=".time().".apk";
 $data{first} = $q->param('first');
 $data{second} = $q->param('second');
 $data{location} = $q->param('localfile');
@@ -17,6 +17,7 @@ open (OUTFILE, ">../apps/$fullname");
 while(my $bytesread=read($data{location},my $buffer,100)){
 	print OUTFILE $buffer;
 }
+=pod
 my @size=stat("../apps/$fullname");
 my $size=$size[7]."Byte";
 my $url="$fullname";
@@ -33,3 +34,4 @@ if($res){
 }else{
 	print $q->redirect("/cgi/turn.pl?warn=error");
 }
+=cut
