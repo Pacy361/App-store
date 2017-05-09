@@ -15,7 +15,7 @@ my $sql=<<END;
 select name,size,download,url from apps where enable='T' and class1='$name';
 END
 if($name eq "È«²¿"){
-	$sql="select name,size,download,url from apps where enable='T' limit 10;";
+	$sql="select name,size,download,url from apps where enable='T' order by download desc limit 10;";
 }
 if($name eq "ËÑË÷"){
 	$sql="select name,size,download,url from apps where enable='T' and name ~* '.*$data{search}.*';";
