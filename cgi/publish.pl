@@ -48,72 +48,72 @@ function change()
    y.options.length = 0;
    if(x.selectedIndex == 0)  
    {  
-        y.options.add(new Option("安全", "0"));  
-        y.options.add(new Option("清理", "1",false,true)); 
-        y.options.add(new Option("浏览器", "2"));  
-        y.options.add(new Option("输入法", "3"));  
+        y.options.add(new Option("安全"));  
+        y.options.add(new Option("清理")); 
+        y.options.add(new Option("浏览器"));  
+        y.options.add(new Option("输入法"));  
    }  
   
    if(x.selectedIndex == 1)  
    {  
-        y.options.add(new Option("动态壁纸", "0"));  
-        y.options.add(new Option("桌面美化", "1",false,true));
-        y.options.add(new Option("主题", "2"));  
+        y.options.add(new Option("动态壁纸"));  
+        y.options.add(new Option("桌面美化"));
+        y.options.add(new Option("主题"));  
    }  
    if(x.selectedIndex == 2)  
    {  
-        y.options.add(new Option("聊天", "0"));  
-        y.options.add(new Option("社交", "1",false,true));
-        y.options.add(new Option("婚恋", "2"));  
-        y.options.add(new Option("通讯", "3"));  
+        y.options.add(new Option("聊天"));  
+        y.options.add(new Option("社交"));
+        y.options.add(new Option("婚恋"));  
+        y.options.add(new Option("通讯"));  
    }
    if(x.selectedIndex == 3){
-	y.options.add(new Option("相机", "0")); 
-	y.options.add(new Option("照片美化", "1",false,true)); 
-	y.options.add(new Option("摄像", "2")); 
+	y.options.add(new Option("相机")); 
+	y.options.add(new Option("照片美化")); 
+	y.options.add(new Option("摄像")); 
    }
    if(x.selectedIndex == 4){
-	y.options.add(new Option("音乐", "0")); 
-	y.options.add(new Option("视频", "1",false,true)); 
-	y.options.add(new Option("铃声", "2")); 
-	y.options.add(new Option("播放器", "3")); 
-	y.options.add(new Option("电台", "4")); 
+	y.options.add(new Option("音乐")); 
+	y.options.add(new Option("视频")); 
+	y.options.add(new Option("铃声")); 
+	y.options.add(new Option("播放器")); 
+	y.options.add(new Option("电台")); 
    }
    if(x.selectedIndex == 5){
-	y.options.add(new Option("日历", "0")); 
-	y.options.add(new Option("天气", "1",false,true)); 
-	y.options.add(new Option("医疗健康", "2")); 
-	y.options.add(new Option("运动健身", "3")); 
-	y.options.add(new Option("母婴", "4")); 
-	y.options.add(new Option("美食", "5")); 
-	y.options.add(new Option("娱乐", "6")); 
-	y.options.add(new Option("生活服务", "7")); 
+	y.options.add(new Option("日历")); 
+	y.options.add(new Option("天气")); 
+	y.options.add(new Option("医疗健康")); 
+	y.options.add(new Option("运动健身")); 
+	y.options.add(new Option("母婴")); 
+	y.options.add(new Option("美食")); 
+	y.options.add(new Option("娱乐")); 
+	y.options.add(new Option("生活服务")); 
    }
    if(x.selectedIndex == 6){
-	y.options.add(new Option("网购", "0")); 
-	y.options.add(new Option("记账", "1",false,true)); 
-	y.options.add(new Option("彩票", "2")); 
-	y.options.add(new Option("股票", "3")); 
-	y.options.add(new Option("基金", "4")); 
-	y.options.add(new Option("银行", "5")); 
+	y.options.add(new Option("网购")); 
+	y.options.add(new Option("记账")); 
+	y.options.add(new Option("彩票")); 
+	y.options.add(new Option("股票")); 
+	y.options.add(new Option("基金")); 
+	y.options.add(new Option("银行")); 
    }
    if(x.selectedIndex == 7){
-	y.options.add(new Option("办公", "0")); 
-	y.options.add(new Option("笔记", "1",false,true)); 
-	y.options.add(new Option("学习", "2")); 
-	y.options.add(new Option("驾考", "3")); 
+	y.options.add(new Option("办公")); 
+	y.options.add(new Option("笔记")); 
+	y.options.add(new Option("学习")); 
+	y.options.add(new Option("驾考")); 
    }
    if(x.selectedIndex == 8){
-	y.options.add(new Option("新闻", "0")); 
-	y.options.add(new Option("电子书", "1",false,true)); 
-	y.options.add(new Option("漫画", "2")); 
-	y.options.add(new Option("笑话", "3")); 
+	y.options.add(new Option("新闻")); 
+	y.options.add(new Option("电子书")); 
+	y.options.add(new Option("漫画")); 
+	y.options.add(new Option("笑话")); 
    }
    if(x.selectedIndex == 9){
-	y.options.add(new Option("地图导航", "0")); 
-	y.options.add(new Option("旅行攻略", "1",false,true)); 
-	y.options.add(new Option("购票", "2")); 
-	y.options.add(new Option("酒店", "3")); 
+	y.options.add(new Option("地图导航")); 
+	y.options.add(new Option("旅行攻略")); 
+	y.options.add(new Option("购票")); 
+	y.options.add(new Option("酒店")); 
    }
 }  
 </script>

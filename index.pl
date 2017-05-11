@@ -4,8 +4,7 @@ print <<EndOfHTML;
 <html>
 	<head>
 		<title>应用市场</title>
-	<script type="text/javascript" src="script/ajax.js" >
-	</script>
+	<script type="text/javascript" src="script/ajax.js" ></script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 	</head>
 
@@ -90,7 +89,7 @@ print <<EndOfHTML;
 		<div align="center">
 			<span>
 			<input id="txt"/>
-        	        <input type="button" value="搜索" onclick="sub()">
+			<span class="glyphicon glyphicon-search"></span><input type="button" value="搜索" onclick="sub()">
 			</span>
 		</div>
 		<div  align="center">

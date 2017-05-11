@@ -20,4 +20,4 @@ if($ret[0] ne $data{code}){
 	print "验证码错误";
 	exit;
 }
-print "<font color=green size=3>&radic;</font>";
+print "验证通过";

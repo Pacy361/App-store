@@ -2,10 +2,9 @@
 function onblur_name(){
         var name = document.getElementById("name").value;
 	if(name == ""){
-       			document.getElementById("name_error").innerHTML="<font color=red size=3>&lowast;</font>";
+       			document.getElementById("error").innerHTML="用户名不能为空";
         		return false;
         }else{
-       		document.getElementById("name_error").innerHTML="<font color=green size=3>&radic;</font>";
 			return true;
         }
 }	
@@ -13,10 +12,9 @@ function onblur_name(){
 function onblur_mail(){
 	var mail = document.getElementById("mail").value;
 	if(mail == ""){
-       		document.getElementById("mail_error").innerHTML="<font color=red size=3>&lowast;</font>";
+       		document.getElementById("error").innerHTML="邮箱不能为空";
                 return false;
 	}else{
-       		document.getElementById("mail_error").innerHTML="<font color=green size=3>&radic;</font>";
 			return true;
 	}
 }	
@@ -25,14 +23,14 @@ function onblur_check_number(){
         var name = document.getElementById("name").value;
 	var check_number = document.getElementById("check_number").value;
 	if(check_number == ""){
-       		document.getElementById("check_number_error").innerHTML="<font color=red size=3>&lowast;</font>";
+       		document.getElementById("error").innerHTML="验证码不能为空";
                 return false;
 	}else{
 		var url = "http://app.createclouds.cn/cgi/modify_mid.pl?user=" + name + "&code=" + check_number;
                 request.onreadystatechange=state_Change;
                 request.open("GET",url);
  		request.send();
-       		document.getElementById("check_number_error").innerHTML="<font color=green size=3>&radic;</font>";
+       		document.getElementById("error").innerHTML="验证码错误";
 		return true;
 	}
 }	
@@ -40,10 +38,9 @@ function onblur_check_number(){
 function onblur_new_password(){
 	var new_password = document.getElementById("new_password").value;
 	if(new_password == ""){
-       		document.getElementById("new_password_error").innerHTML="<font color=red size=3>&lowast;</font>";
+       		document.getElementById("error").innerHTML="新密码不能为空";
                 return false;
 	}else{
-       		document.getElementById("new_password_error").innerHTML="<font color=green size=3>&radic;</font>";
 			return true;
 	}
 }	
@@ -51,10 +48,9 @@ function onblur_new_password(){
 function onblur_confirm_new_password(){
 	var confirm_new_password = document.getElementById("confirm_new_password").value;
 	if(confirm_new_password == ""){
-       		document.getElementById("confirm_new_password_error").innerHTML="<font color=red size=3>&lowast;</font>";
+       		document.getElementById("error").innerHTML="请确认新密码";
                 return false;
 	}else{
-       		document.getElementById("confirm_new_password_error").innerHTML="<font color=green size=3>&radic;</font>";
 			return true;
 	}
 }	
@@ -62,7 +58,7 @@ function code_same(){
 	var new_password = document.getElementById("new_password").value;
 	var confirm_new_password = document.getElementById("confirm_new_password").value;
 	if(new_password != confirm_new_password){
-       		document.getElementById("confirm_new_password_error").innerHTML="两次密码不一致";
+       		document.getElementById("error").innerHTML="两次密码不一致";
 		return false;
 	}else{
 		return true;
@@ -94,7 +90,7 @@ function getRequest() {
                     try {// Internet Explorer
                         xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
                     } catch (e) {
-                        alert("your browser not support ajax!"); }
+                        alert("浏览器不支持ajax!"); }
                 }
             }
             return xmlHttp;
@@ -106,7 +102,7 @@ window.onload = function(){
                         var name = document.getElementById("name").value;
                         var mail = document.getElementById("mail").value;
                         if(mail == ""){
-       				document.getElementById("check_number_error").innerHTML="请输入邮箱地址";
+       				document.getElementById("error").innerHTML="请输入邮箱地址";
                                 return false;
                         }
                         var url = "http://app.createclouds.cn/cgi/mail.pl?user=" + name + "&address=" + mail;
@@ -123,7 +119,7 @@ if (request.readyState==4)
   if (request.status==200)
     {// 200 = "OK"
         str=request.responseText;
-	document.getElementById("check_number_error").innerHTML=str;
+	document.getElementById("error").innerHTML=str;
     }
   else
     {
