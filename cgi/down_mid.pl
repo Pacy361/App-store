@@ -7,7 +7,7 @@ my %data;
 $data{name} = $q->param('name');
 my $name=$data{name};
 my $sql=<<END;
-update apps set download = download + 1 where timestamp = '1494323645';
+update apps set download = download + 1 where timestamp = '$name';
 END
 my $ret=public->exec_sql($sql);
 print "Content-Type:application/octet-stream; name=$name\r\n";
