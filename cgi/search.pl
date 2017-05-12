@@ -26,13 +26,13 @@ if($name eq "个人"){
 my @row=public->sel_sql($sql);
 my $ret="";
 $ret.=<<End; 
-<table class=table1>
+<table class="table1">
 	<thead>
                     <tr>
-                        <th>名称</th>
-                        <th scope="col" abbr="Starter">大小</th>
-                        <th scope="col" abbr="Medium">下载次数</th>
-                        <th scope="col" abbr="Business">链接</th>
+                        <th scope="col" >名称</th>
+                        <th scope="col" >大小</th>
+                        <th scope="col" >下载次数</th>
+                        <th scope="col" >链接</th>
                     </tr>
         </thead>
         <tbody>

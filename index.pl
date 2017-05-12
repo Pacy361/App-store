@@ -6,79 +6,36 @@ print <<EndOfHTML;
 		<title>应用市场</title>
 	<script type="text/javascript" src="script/ajax.js" ></script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-	</head>
-
-	<style type="text/css">
-    		.menubar
-    		    {line-height: 24px;}
-    		.menuitem
-    		    {background: #fff; border: 0px solid #c00; position: relative; float: left; margin-right: 1em;}
-    		.menuitem .submenu
-    		    {background: #ccc; border: 0px solid #00c; position: absolute; top: 25px; left: -1px; width: 5em;}
-    		.menuitem .submenu
-    		    {display: none;}
-    		.menuitem:hover .submenu
-    		    {display: block;}
-	</style>
-
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
+        <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>
 	<style>
         *{
             margin:0;
             padding:0;
         }
-        body{
-            font-family: Georgia, serif;
-            font-size: 20px;
-            font-weight: normal;
-            letter-spacing: normal;
-            background: #f0f0f0;
+        #content{
+        background-color:#fff;
+        width:1000px;
+        padding:40px;
+        margin:0 auto;
+        border-left:30px solid #1D81B6;
+        border-right:1px solid #ddd;
+        -moz-box-shadow:0px 0px 16px #aaa;
         }
-	#content{
-	background-color:#fff;
-	width:950px;
-	padding:40px;
-	margin:0 auto;
-	border-left:30px solid #1D81B6;
-	border-right:1px solid #ddd;
-	-moz-box-shadow:0px 0px 16px #aaa;
-	}
-	#content h1{
-	 font-family:"Trebuchet MS",sans-serif;
-	 color:#1D81B6;
-	 font-weight:normal;
-	 font-style:normal;
-	 font-size:56px;
-	 text-shadow:1px 1px 1px #aaa;
-	}
-	#content h2{
-	font-family:"Trebuchet MS",sans-serif;
-	font-size:34px;
-	font-style:normal;
-	background-color:#f0f0f0;
-	margin:40px 0px 30px -40px;
-	padding:0px 40px;
-	clear:both;
-	float:left;
-	width:100%;
-	color:#aaa;
-	text-shadow:1px 1px 1px #fff;
-	}
-        #content a{
-            color:#1D81B6;
-            text-decoration:none;
-            float:right;
-            text-shadow:1px 1px 1px #888;
-        }
-       </style>
+	</style>
+	</head>
 	<body>
 		<div id="content">
 		<div align="center">
 			<span style="float:left">
-					安卓开发者平台
-					<a href="index.pl">首页</a>
-					<a href="index.pl">服务</a>
-					<a href="index.pl">活动</a>
-					<a href="index.pl">帮助</a>
+					<ul class="nav nav-pills">
+  					  <li role="presentation" ><a href="index.pl">安卓开发者平台</a></li>
+  					  <li role="presentation" class="active"><a href="index.pl">首页</a></li>
+  					  <li role="presentation"><a href="index.pl">服务</a></li>
+  					  <li role="presentation"><a href="index.pl">活动</a></li>
+  					  <li role="presentation"><a href="index.pl">帮助</a></li>
+					</ul>
 			</span>
 					<span id=entry1 style=float:right>&darr;</span>
 					<span id=entry2 style=float:right></span>
@@ -87,10 +44,10 @@ print <<EndOfHTML;
 		<div align="center"><h2>欢迎来到安卓应用市场</h2></div>
 		<br>
 		<div align="center">
-			<span>
-			<input id="txt"/>
-			<span class="glyphicon glyphicon-search"></span><input type="button" value="搜索" onclick="sub()">
-			</span>
+			<div class="form-group">
+			  <input id="txt" />
+			  <button type="submit" class="btn btn-default" onclick="sub()" >搜索</button>
+			</div>
 		</div>
 		<div  align="center">
 				<img src="/img/market.jpg">
@@ -109,18 +66,19 @@ print <<EndOfHTML;
 				</span>
 		</div>
 		<hr>
-			软件类型
-			<a href="#" id="btn06">影音播放</a>&nbsp;&nbsp;&nbsp;
-			<a href="#" id="btn07">生活实用</a>
-			<a href="#" id="btn08">理财购物</a>
-			<a href="#" id="btn09">办公学习</a>
-			<a href="#" id="btn10">咨询阅读</a>
-			<a href="#" id="btn11">旅游出行</a>
-			<a href="#" id="btn05">拍摄美化</a>
-			<a href="#" id="btn04">社交通讯</a>
-			<a href="#" id="btn03">主题壁纸</a>
-                	<a href="#" id="btn02" >系统工具</a>
-		        <a href="#" id="btn01" >全部</a>
+			<div class="btn-group" role="group" aria-label="...">	
+		          <button type="button" class="btn btn-default" id="btn01" >全部</button>
+		          <button type="button" class="btn btn-default" id="btn02" >系统工具</button>
+		          <button type="button" class="btn btn-default" id="btn03" >主题壁纸</button>
+		          <button type="button" class="btn btn-default" id="btn04" >社交通讯</button>
+		          <button type="button" class="btn btn-default" id="btn05" >拍摄美化</button>
+			  <button type="button" class="btn btn-default" id="btn06" >影音播放</button>
+  			  <button type="button" class="btn btn-default" id="btn07" >生活实用</button>
+  			  <button type="button" class="btn btn-default" id="btn08" >理财购物</button>
+		          <button type="button" class="btn btn-default" id="btn09" >办公学习</button>
+		          <button type="button" class="btn btn-default" id="btn10" >咨询阅读</button>
+		          <button type="button" class="btn btn-default" id="btn11" >旅游出行</button>
+			</div>
 			<div align=center id=ret>
 			</div>
 </body>

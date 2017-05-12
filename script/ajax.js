@@ -81,6 +81,12 @@
                         request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=×ÉÑ¯ÔÄ¶Á");
                         request.send();
         	};
+                var btn11Ele = document.getElementById("btn11");
+                btn11Ele.onclick = function(){
+			request.onreadystatechange=state_Change;
+                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=ÂÃÓÎ³öÐÐ");
+                        request.send();
+        	};
 }	
 function sub(){
 	var content = document.getElementById("txt").value;
