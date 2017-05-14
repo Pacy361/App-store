@@ -18,7 +18,7 @@ while(my $bytesread=read($data{location},my $buffer,100)){
 	print OUTFILE $buffer;
 }
 my @size=stat("../apps/$fullname");
-my $size=$size[7]."Byte";
+my $size=($size[7]/1000)."KB";
 my $url='http://app.createclouds.cn/cgi/down_mid.pl?name='.$fullname;
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @account=split(/=/,$rcvd_cookies);
