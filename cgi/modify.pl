@@ -55,12 +55,12 @@ print <<End;
 
   <div class="form-group">
     <label for="exampleInputFile">新密码</label>
-    <input class="form-control" id=new_password name="new_password" onblur=onblur_new_password() style="width:250px;height:30px">
+    <input type="password" class="form-control" id=new_password name="new_password" onblur=onblur_new_password() style="width:250px;height:30px">
   </div>
 
   <div class="form-group">
     <label for="exampleInputFile">确认新密码</label>
-    <input class="form-control" id=confirm_new_password name="confirm_new_password" onblur=onblur_confirm_new_password() style="width:250px;height:30px">
+    <input type="password" class="form-control" id=confirm_new_password name="confirm_new_password" onblur=onblur_confirm_new_password() style="width:250px;height:30px">
   </div>
 
   <button type="submit" class="btn btn-default" id="modify" value="提交">提交</button>

@@ -24,7 +24,7 @@ print <<END;
   <div class="form-group">
     <label for="exampleInputEmail1">ÃÜÂë</label>
     <a href=http://app.createclouds.cn/cgi/modify.pl?name=modify_password >Íü¼ÇÃÜÂë</a><br>
-    <input class="form-control" id="password" name="password" style="width:250px;height:30px">
+    <input type="password" class="form-control" id="password" name="password" style="width:250px;height:30px">
   </div>
 <input type="submit" value="Ìá½»">
 </form>

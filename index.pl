@@ -68,16 +68,19 @@ print <<EndOfHTML;
 		<hr>
 			<div class="btn-group" role="group" aria-label="...">	
 		          <button type="button" class="btn btn-default" id="btn01" >全部</button>
-		          <button type="button" class="btn btn-default" id="btn02" >系统工具</button>
-		          <button type="button" class="btn btn-default" id="btn03" >主题壁纸</button>
-		          <button type="button" class="btn btn-default" id="btn04" >社交通讯</button>
-		          <button type="button" class="btn btn-default" id="btn05" >拍摄美化</button>
-			  <button type="button" class="btn btn-default" id="btn06" >影音播放</button>
-  			  <button type="button" class="btn btn-default" id="btn07" >生活实用</button>
-  			  <button type="button" class="btn btn-default" id="btn08" >理财购物</button>
-		          <button type="button" class="btn btn-default" id="btn09" >办公学习</button>
-		          <button type="button" class="btn btn-default" id="btn10" >咨询阅读</button>
-		          <button type="button" class="btn btn-default" id="btn11" >旅游出行</button>
+		          <button type="button" class="btn btn-default" id="btn02" >必备软件</button>
+		          <button type="button" class="btn btn-default" id="btn03" >休闲娱乐</button>
+		          <button type="button" class="btn btn-default" id="btn04" >实用工具</button>
+		          <button type="button" class="btn btn-default" id="btn05" >智能服务</button>
+			</div>
+			<div class="btn-group">
+  			<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   			 排列方式<span class="caret"></span>
+  			</button>
+  			<ul class="dropdown-menu">
+				<li><a href="#">列表</a></li>
+    				<li><a href="#">宫格</a></li>
+  			</ul>
 			</div>
 			<div align=center id=ret>
 			</div>

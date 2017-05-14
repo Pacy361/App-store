@@ -12,27 +12,28 @@ my $name=$data{name};
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @account=split(/=/,$rcvd_cookies);
 my $sql=<<END;
-select name,size,download,url from apps where enable='T' and class1='$name';
+select name,size,download,url,account from apps where enable='T' and class1='$name';
 END
 if($name eq "全部"){
-	$sql="select name,size,download,url from apps where enable='T' order by download desc limit 10;";
+	$sql="select name,size,download,url,account from apps where enable='T' order by download desc limit 10;";
 }
 if($name eq "搜索"){
-	$sql="select name,size,download,url from apps where enable='T' and name ~* '.*$data{search}.*';";
+	$sql="select name,size,download,url,account from apps where enable='T' and name ~* '.*$data{search}.*';";
 }
 if($name eq "个人"){
-	$sql="select name,size,download,url from apps where enable='T' and account='$account[1]' ;";
+	$sql="select name,size,download,url,account from apps where enable='T' and account='$account[1]' ;";
 }
 my @row=public->sel_sql($sql);
 my $ret="";
 $ret.=<<End; 
-<table class="table1">
+<table class="table">
 	<thead>
                     <tr>
                         <th scope="col" >名称</th>
                         <th scope="col" >大小</th>
                         <th scope="col" >下载次数</th>
-                        <th scope="col" >链接</th>
+                        <th scope="col" >安装</th>
+                        <th scope="col" >用户</th>
                     </tr>
         </thead>
         <tbody>
@@ -43,10 +44,12 @@ while(@row){
         my ($size)=shift(@row);
         my ($download)=shift(@row);
         my ($url)=shift(@row);
+        my ($user)=shift(@row);
         $ret.="<td >$name</td>";
         $ret.="<td >$size</td>";
         $ret.="<td >$download</td>";
         $ret.="<td ><a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></td>";
+        $ret.="<td >$user</td>";
 	$ret.="</tr>";
 }
 $ret.="</tbody></table>";

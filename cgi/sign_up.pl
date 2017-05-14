@@ -22,7 +22,10 @@ print <<END;
 
   <div class="form-group">
     <label for="exampleInputEmail1">密码</label>
-    <input class="form-control" id="password" name="password" style="width:250px;height:30px">
+    <input type="password" class="form-control" id="password" name="password" style="width:250px;height:30px" placeholder="至少8位，包含字母，数字，下划线">
+    <div class="progress" style="width:250px" >
+      <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"  ></div>
+    </div>
   </div>
 
   <div class="form-group">

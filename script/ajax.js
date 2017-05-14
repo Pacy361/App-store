@@ -30,61 +30,25 @@
                 var btn02Ele = document.getElementById("btn02");
                 btn02Ele.onclick = function(){
 			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=系统工具");
+                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=必备软件");
                         request.send();
         	};
                 var btn03Ele = document.getElementById("btn03");
                 btn03Ele.onclick = function(){
 			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=主题壁纸");
+                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=休闲娱乐");
                         request.send();
         	};
                 var btn04Ele = document.getElementById("btn04");
                 btn04Ele.onclick = function(){
 			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=社交通讯");
+                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=实用工具");
                         request.send();
         	};
                 var btn05Ele = document.getElementById("btn05");
                 btn05Ele.onclick = function(){
 			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=拍摄美化");
-                        request.send();
-        	};
-                var btn06Ele = document.getElementById("btn06");
-                btn06Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=影音播放");
-                        request.send();
-        	};
-                var btn07Ele = document.getElementById("btn07");
-                btn07Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=生活实用");
-                        request.send();
-        	};
-                var btn08Ele = document.getElementById("btn08");
-                btn08Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=理财购物");
-                        request.send();
-        	};
-                var btn09Ele = document.getElementById("btn09");
-                btn09Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=办公学习");
-                        request.send();
-        	};
-                var btn10Ele = document.getElementById("btn10");
-                btn10Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=咨询阅读");
-                        request.send();
-        	};
-                var btn11Ele = document.getElementById("btn11");
-                btn11Ele.onclick = function(){
-			request.onreadystatechange=state_Change;
-                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=旅游出行");
+                        request.open("GET","http://app.createclouds.cn/cgi/search.pl?name=智能服务");
                         request.send();
         	};
 }	
