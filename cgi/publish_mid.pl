@@ -9,7 +9,7 @@ $data{name} = $q->param('filename');
 if($data{name} eq ""){
 	print $q->redirect("/cgi/turn.pl?warn=appname_none");
 }
-my $fullname=time();
+my $fullname=time().'.apk';
 $data{first} = $q->param('first');
 $data{second} = $q->param('second');
 $data{location} = $q->param('localfile');
