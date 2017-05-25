@@ -27,32 +27,25 @@ my @row=public->sel_sql($sql);
 my $ret="";
 $ret.=<<End; 
 <table class="table">
-	<thead>
-                    <tr>
-                        <th scope="col" >名称</th>
-                        <th scope="col" >大小</th>
-                        <th scope="col" >下载次数</th>
-                        <th scope="col" >安装</th>
-                        <th scope="col" >用户</th>
-                    </tr>
-        </thead>
-        <tbody>
 End
 while(@row){
-	$ret.="<tr>";
         my ($name)=shift(@row);
         my ($size)=shift(@row);
         my ($download)=shift(@row);
         my ($url)=shift(@row);
         my ($user)=shift(@row);
-        $ret.="<td >$name</td>";
-        $ret.="<td >$size</td>";
-        $ret.="<td >$download</td>";
-        $ret.="<td ><a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></td>";
-        $ret.="<td >$user</td>";
-	$ret.="</tr>";
+	$ret.="<td>";
+	$ret.="<dl>";
+	$ret.="<dt>靠</dt>";
+        $ret.="<dd >$name</dd>";
+        $ret.="<dd >$size</dd>";
+        $ret.="<dd >$download</dd>";
+        $ret.="<dd ><a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></dd>";
+        $ret.="<dd >$user</dd>";
+	$ret.="</dl>";
+	$ret.="</td>";
 }
-$ret.="</tbody></table>";
+$ret.="</table>";
 my $str;
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @name=split(/=/,$rcvd_cookies);
