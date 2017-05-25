@@ -14,13 +14,13 @@ my @account=split(/=/,$rcvd_cookies);
 my $sql=<<END;
 select name,size,download,url,account from apps where enable='T' and class1='$name';
 END
-if($name eq "È«²¿"){
+if($name eq "å…¨éƒ¨"){
 	$sql="select name,size,download,url,account from apps where enable='T' order by download desc limit 10;";
 }
-if($name eq "ËÑË÷"){
+if($name eq "æœç´¢"){
 	$sql="select name,size,download,url,account from apps where enable='T' and name ~* '.*$data{search}.*';";
 }
-if($name eq "¸öÈË"){
+if($name eq "ä¸ªäºº"){
 	$sql="select name,size,download,url,account from apps where enable='T' and account='$account[1]' ;";
 }
 my @row=public->sel_sql($sql);
@@ -36,8 +36,8 @@ while(@row){
         my ($user)=shift(@row);
 	$ret.="<td>";
 	$ret.="<dl>";
-	$ret.="<dt>¿¿</dt>";
-        $ret.="<dd >$name</dd>";
+	$ret.="<dt>åç§°</dt>";
+        $ret.="<dd >&nbsp;$name</dd>";
         $ret.="<dd >$size</dd>";
         $ret.="<dd >$download</dd>";
         $ret.="<dd ><a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></dd>";
@@ -54,9 +54,9 @@ my $user_name = $session->param('name');
 my $login_str=<<End;
 <div class="menubar">
     <div class="menuitem">
-        <div>µÇÂ¼</div>
+        <div>ç™»å½•</div>
         <div class="submenu">
-            <div><a href=#>ĞŞ¸ÄÃÜÂë</a></div>
+            <div><a href=#>ä¿®æ”¹å¯†ç </a></div>
         </div>
     </div>
 </div>
@@ -66,8 +66,8 @@ my $name_str=<<End;
     <div class="menuitem">
         <div>$user_name</div>
         <div class="submenu">
-            <div><a href=http://app.createclouds.cn/cgi/modify.pl?name=modify_password>ĞŞ¸ÄÃÜÂë</a></div>
-            <div><a href=http://app.createclouds.cn/cgi/sign_out.pl>ÍË³ö</a></div>
+            <div><a href=http://app.createclouds.cn/cgi/modify.pl?name=modify_password>ä¿®æ”¹å¯†ç </a></div>
+            <div><a href=http://app.createclouds.cn/cgi/sign_out.pl>é€€å‡º</a></div>
         </div>
     </div>
 </div>
@@ -78,6 +78,6 @@ if(length($user_name) != 0){
 End
 }else{
 	print <<End;
-	$ret,<a href=cgi/sign_up.pl>×¢²á</a>,$login_str,<a href=cgi/sign_in.pl>µÇÂ¼|</a>,
+	$ret,<a href=cgi/sign_up.pl>æ³¨å†Œ</a>,$login_str,<a href=cgi/sign_in.pl>ç™»å½•|</a>,
 End
 }
