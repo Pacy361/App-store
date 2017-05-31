@@ -3,13 +3,35 @@ print "Content-type:text/html\n\n";
 print <<EndOfHTML;
 <html>
 	<head>
-		<title>应用市场</title>
+		<title>app-market</title>
 	<script type="text/javascript" src="script/ajax.js" ></script>
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
         <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>
 	<style>
+	.wrap {
+  		padding: 10px 0 0 10px;
+  		width: 900px;
+  		overflow: hidden;
+	}
+
+	.wrap .item {
+  	position: relative;
+  	float: left;
+  	margin-left: -10px;
+  	margin-top: -10px;
+  	width: 150px;
+  	height: 150px;
+  	line-height: 80px;
+  	text-align: center;
+  	border: 10px solid #ccc;
+	}
+
+	.wrap .item:hover {
+	  z-index: 2;
+	  border-color: #99cc00;
+	}
         *{
             margin:0;
             padding:0;
@@ -34,6 +56,7 @@ print <<EndOfHTML;
   					  <li role="presentation" class="active"><a href="index.pl">首页</a></li>
   					  <li role="presentation"><a href="index.pl">服务</a></li>
   					  <li role="presentation"><a href="index.pl">活动</a></li>
+  					  <li role="presentation"><a href="message.pl">留言</a></li>
   					  <li role="presentation"><a href="index.pl">帮助</a></li>
 					</ul>
 			</span>
@@ -82,7 +105,7 @@ print <<EndOfHTML;
     				<li><a href="#">宫格</a></li>
   			</ul>
 			</div>
-			<div align=center id=ret>
+			<div align=center class=wrap id=ret>
 			</div>
 </body>
 </html>

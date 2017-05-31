@@ -14,38 +14,31 @@ my @account=split(/=/,$rcvd_cookies);
 my $sql=<<END;
 select name,size,download,url,account from apps where enable='T' and class1='$name';
 END
-if($name eq "å…¨éƒ¨"){
+if($name eq "È«²¿"){
 	$sql="select name,size,download,url,account from apps where enable='T' order by download desc limit 10;";
 }
-if($name eq "æœç´¢"){
+if($name eq "ËÑË÷"){
 	$sql="select name,size,download,url,account from apps where enable='T' and name ~* '.*$data{search}.*';";
 }
-if($name eq "ä¸ªäºº"){
+if($name eq "¸öÈË"){
 	$sql="select name,size,download,url,account from apps where enable='T' and account='$account[1]' ;";
 }
 my @row=public->sel_sql($sql);
 my $ret="";
-$ret.=<<End; 
-<table class="table">
-End
 while(@row){
         my ($name)=shift(@row);
         my ($size)=shift(@row);
         my ($download)=shift(@row);
         my ($url)=shift(@row);
         my ($user)=shift(@row);
-	$ret.="<td>";
-	$ret.="<dl>";
-	$ret.="<dt>åç§°</dt>";
-        $ret.="<dd >&nbsp;$name</dd>";
-        $ret.="<dd >$size</dd>";
-        $ret.="<dd >$download</dd>";
-        $ret.="<dd ><a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></dd>";
-        $ret.="<dd >$user</dd>";
-	$ret.="</dl>";
-	$ret.="</td>";
+        $ret.="<div class=item>";
+        $ret.="<dd >Ãû³Æ:&nbsp;$name</dd>";
+        $ret.="<dd >´óĞ¡:&nbsp;$size</dd>";
+        $ret.="<dd >ÏÂÔØ´ÎÊı:&nbsp;$download</dd>";
+        $ret.="<dd >°²×°:<a href=$url><img src=http://app.createclouds.cn/img/icon.png /></a></dd>";
+        $ret.="<dd >ÉÏ´«Õß:&nbsp;$user</dd>";
+        $ret.="</div>";
 }
-$ret.="</table>";
 my $str;
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @name=split(/=/,$rcvd_cookies);
@@ -54,9 +47,9 @@ my $user_name = $session->param('name');
 my $login_str=<<End;
 <div class="menubar">
     <div class="menuitem">
-        <div>ç™»å½•</div>
+        <div>µÇÂ¼</div>
         <div class="submenu">
-            <div><a href=#>ä¿®æ”¹å¯†ç </a></div>
+            <div><a href=#>ĞŞ¸ÄÃÜÂë</a></div>
         </div>
     </div>
 </div>
@@ -66,8 +59,8 @@ my $name_str=<<End;
     <div class="menuitem">
         <div>$user_name</div>
         <div class="submenu">
-            <div><a href=http://app.createclouds.cn/cgi/modify.pl?name=modify_password>ä¿®æ”¹å¯†ç </a></div>
-            <div><a href=http://app.createclouds.cn/cgi/sign_out.pl>é€€å‡º</a></div>
+            <div><a href=http://app.createclouds.cn/cgi/modify.pl?name=modify_password>ĞŞ¸ÄÃÜÂë</a></div>
+            <div><a href=http://app.createclouds.cn/cgi/sign_out.pl>ÍË³ö</a></div>
         </div>
     </div>
 </div>
@@ -78,6 +71,6 @@ if(length($user_name) != 0){
 End
 }else{
 	print <<End;
-	$ret,<a href=cgi/sign_up.pl>æ³¨å†Œ</a>,$login_str,<a href=cgi/sign_in.pl>ç™»å½•|</a>,
+	$ret,<a href=cgi/sign_up.pl>×¢²á</a>,$login_str,<a href=cgi/sign_in.pl>µÇÂ¼|</a>,
 End
 }
