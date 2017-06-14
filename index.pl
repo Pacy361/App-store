@@ -9,22 +9,8 @@ print <<EndOfHTML;
 	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script type="text/javascript" src="script/ajax.js" ></script>
     	<script type="text/javascript" src="script/jquery-1.6.1.min.js"></script>
-    	<script type="text/javascript" src="script/myplaylist.js"></script>
-    	<script type="text/javascript" src="plugin/jquery-jplayer/jquery.jplayer.js"></script>
-    	<script type="text/javascript" src="plugin/ttw-music-player-min.js"></script>
         <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8" ></script>
         <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript" charset="utf-8" ></script>
-	<script type="text/javascript">
-        \$(document).ready(function(){
-                \$('#music').ttwMusicPlayer(myPlaylist,{
-                autoPlay:true, 
-                jPlayer:{
-                    swfPath:'plugin/jquery-jplayer'
-                }
-            });
-        });
-        </script>
-
 	<style>
 	.wrap {
   		padding: 10px 0 0 10px;
@@ -73,7 +59,7 @@ print <<EndOfHTML;
   					  <li role="presentation"><a href="index.pl">∑˛ŒÒ</a></li>
   					  <li role="presentation"><a href="index.pl">ªÓ∂Ø</a></li>
   					  <li role="presentation"><a href="message.pl">¡Ù—‘</a></li>
-  					  <li role="presentation"><a href="music.html">“Ù¿÷</a></li>
+  					  <li role="presentation"><a href="music.pl">“Ù¿÷</a></li>
   					  <li role="presentation"><a href="index.pl">∞Ô÷˙</a></li>
 					</ul>
 			</span>
