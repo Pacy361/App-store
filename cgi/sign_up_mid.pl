@@ -10,8 +10,8 @@ print   <<EndOfHTML;
 EndOfHTML
 require public;
 use strict;
-use CGI;
 use MIME::Lite;
+use CGI;
 my $q = CGI->new;
 my %data;
 $data{name} = $q->param('name');
@@ -53,16 +53,10 @@ sub send_msg{
 	my ($to,$name) = @_;
 	my $from = 'admin@apps.com';
 	my $cc = "fpx050923@163.com";
-	my $subject = "激活邮件";
-	my $message = "您之所以会收到此邮件，是因为您在我们的站点上进行了注册，请点击下面的链接，进行激活:http://app.createclouds.cn/cgi/active.pl?account=$name 如果不能点击，请复制链接到地址栏进行跳转";
-	my $msg = MIME::Lite->new(
-	                 From     => $from,
-	                 To       => $to,
-	                 Cc       => $cc,
-	                 Subject  => $subject,
-	                 Data     => $message
-	                      );
-	$msg->send;
+	my $sub= "active";
+        my $msg = "http://app.createclouds.cn/cgi/active.pl?account=$name";
+	public->mail($to,$sub,$msg);
+	#system("bash /root/send.sh $to $sub $msg");
 	print "邮件发送成功\n";
 }
 print $q->header;

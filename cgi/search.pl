@@ -39,6 +39,13 @@ while(@row){
         $ret.="<dd >上传者:&nbsp;$user</dd>";
         $ret.="</div>";
 }
+        $ret.="<div class=item>";
+        $ret.="<dd ><br><br></dd>";
+        $ret.="<dd ></dd>";
+        $ret.="<dd ></dd>";
+        $ret.="<dd >查看更多&raquo;</dd>";
+        $ret.="<dd ></dd>";
+        $ret.="</div>";
 my $str;
 my $rcvd_cookies = $ENV{'HTTP_COOKIE'};
 my @name=split(/=/,$rcvd_cookies);

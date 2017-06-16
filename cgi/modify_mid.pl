@@ -15,9 +15,9 @@ my @ret=public->sel_sql($sql);
 if($data{code} eq ""){
 	print "请输入验证码";
 	exit;
-}
-if($ret[0] ne $data{code}){
+}elsif($ret[0] ne $data{code}){
 	print "验证码错误";
 	exit;
-}
-print "验证通过";
+}else{
+	print "验证通过"
+};

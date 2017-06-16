@@ -30,7 +30,6 @@ function onblur_check_number(){
                 request.onreadystatechange=state_Change;
                 request.open("GET",url);
  		request.send();
-       		document.getElementById("error").innerHTML="验证码错误";
 		return true;
 	}
 }	
@@ -47,7 +46,7 @@ function onblur_new_password(){
 //检查确认密码是否为空
 function onblur_confirm_new_password(){
 	var confirm_new_password = document.getElementById("confirm_new_password").value;
-	if(confirm_new_password == ""){
+	if(onfirm_new_password == ""){
        		document.getElementById("error").innerHTML="请确认新密码";
                 return false;
 	}else{

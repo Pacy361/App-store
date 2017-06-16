@@ -56,4 +56,12 @@ sub sel_sql{
 	}
 	return @ret;
 }
+sub mail{
+	shift(@_);
+        my ($to,$sub,$msg) = @_;
+        #print $to."\n";
+        #print $sub."\n";
+        #print $msg."\n";
+        system("bash /root/send.sh $to $sub $msg");
+}
 1;

@@ -46,18 +46,10 @@ End
 	exit;
 }
 sub send_msg{
-	#接收邮箱，这里我设置为我的 QQ 邮箱，你需要修改它为你自己的邮箱
 	my ($to,$code) = @_;
-	my $from = 'admin@createclouds.cn';
-	my $cc = 'user1@createclouds.cn';
-	my $subject = "密码找回";
-	my $message = "您之所以会收到此邮件，是因为您正在进行密码找回，请输入下面的验证码:$code";
-	my $msg = MIME::Lite->new(
-	                 From     => $from,
-	                 To       => $to,
-	                 Cc       => $cc,
-	                 Subject  => $subject,
-	                 Data     => $message
-	                      );
-	$msg->send;
+	#my $subject = "密码找回";
+	#my $message = "您之所以会收到此邮件，是因为您正在进行密码找回，请输入下面的验证码:$code";
+	my $sub = "password";
+	my $msg = "$code";
+	public->mail($to,$sub,$msg);
 }
