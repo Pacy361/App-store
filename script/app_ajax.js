@@ -32,6 +32,7 @@ if (request.readyState==4)
 	strs=str.split(","); 
     	document.getElementById('app_h1').innerHTML=strs[0];
     	document.getElementById('ret').innerHTML=strs[1];
+    	document.getElementById('xxx').innerHTML=strs[7];
 	//分割应用列表
 	var str=strs[2];
 	var arr= new Array();

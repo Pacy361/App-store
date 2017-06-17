@@ -47,7 +47,7 @@ End
 }
 sub send_msg{
 	my ($to,$code) = @_;
-	#my $subject = "密码找回";
+	#my $sub = "密码找回";
 	#my $message = "您之所以会收到此邮件，是因为您正在进行密码找回，请输入下面的验证码:$code";
 	my $sub = "password";
 	my $msg = "$code";
